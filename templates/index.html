@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Alexa Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="assistant-box">
+            <h1>Mini Alexa Assistant</h1>
+            <div class="response-area" id="responseArea">
+                <p>Hi! I'm your assistant. Click the button and ask me something.</p>
+            </div>
+            <div class="listening-indicator hidden" id="listeningIndicator">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="listening-text">Listening...</div>
+            </div>
+            <button class="mic-button" id="micButton">
+                <div class="mic-icon"></div>
+            </button>
+            <div class="voice-selection">
+                <label for="voiceSelect">Assistant Voice:</label>
+                <select id="voiceSelect"></select>
+            </div>
+            <div class="footer">
+                <p>Try asking about:</p>
+                <div class="suggestion-chips">
+                    <span class="chip" onclick="askQuestion('What time is it?')">Time</span>
+                    <span class="chip" onclick="askQuestion('Tell me a joke')">Joke</span>
+                    <span class="chip" onclick="askQuestion('What is 15 - 10 + 10?')">Math</span>
+                    <span class="chip" onclick="askQuestion('Who is Elon Musk?')">Elon Musk</span>
+                    <span class="chip" onclick="askQuestion('Tell me about programming languages')">Programming</span>
+                    <span class="chip" onclick="askQuestion('What are web technologies?')">Web Tech</span>
+                    <span class="chip" onclick="askQuestion('What are emerging technologies?')">New Tech</span>
+                    <span class="chip" onclick="askQuestion('Open YouTube')">YouTube</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
